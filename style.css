@@ -1,0 +1,312 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #170d24, #302044, #1b1028);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Bienvenida */
+
+.welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #170d24, #302044);
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.welcome-card {
+    width: min(450px, 100%);
+    padding: 45px 25px;
+    text-align: center;
+    border: 1px solid #b58ad1;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 35px rgba(185, 128, 225, 0.15);
+}
+
+.small-text {
+    color: #d6b3ec;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+}
+
+.welcome h1 {
+    margin: 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.welcome-card p:not(.small-text) {
+    color: #d8cadd;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #a66acb;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c18ae0;
+    transform: scale(1.05);
+}
+
+.welcome.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Experiencia */
+
+.experience {
+    min-height: 100vh;
+    padding: 55px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: appear 1.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.experience h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: #e5c4f5;
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: #d1bedc;
+}
+
+/* Ramo */
+
+.bouquet-area {
+    width: 100%;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bouquet {
+    position: relative;
+    width: 280px;
+    height: 330px;
+    transition: transform 0.4s ease;
+}
+
+.bouquet:hover {
+    transform: scale(1.04);
+}
+
+.flower {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    z-index: 2;
+}
+
+.flower-one {
+    top: 45px;
+    left: 95px;
+}
+
+.flower-two {
+    top: 85px;
+    left: 25px;
+    transform: scale(0.85);
+}
+
+.flower-three {
+    top: 85px;
+    right: 25px;
+    transform: scale(0.9);
+}
+
+.flower-four {
+    top: 145px;
+    left: 65px;
+    transform: scale(0.75);
+}
+
+.flower-five {
+    top: 145px;
+    right: 65px;
+    transform: scale(0.8);
+}
+
+.petals {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 50% 10%, #e5b5ff 0 20%, transparent 22%),
+        radial-gradient(ellipse at 90% 35%, #c78ae9 0 20%, transparent 22%),
+        radial-gradient(ellipse at 80% 85%, #e5b5ff 0 20%, transparent 22%),
+        radial-gradient(ellipse at 20% 85%, #c78ae9 0 20%, transparent 22%),
+        radial-gradient(ellipse at 10% 35%, #e5b5ff 0 20%, transparent 22%);
+    filter: drop-shadow(0 0 5px rgba(210, 155, 255, 0.5));
+}
+
+.center {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #ffe9a6, #d99b4b);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #ffd78a;
+}
+
+/* Tallos y envoltura */
+
+.stems {
+    position: absolute;
+    width: 140px;
+    height: 155px;
+    left: 70px;
+    top: 145px;
+    z-index: 1;
+    background:
+        linear-gradient(75deg, transparent 46%, #628a58 47% 49%, transparent 50%),
+        linear-gradient(90deg, transparent 48%, #83a96a 49% 51%, transparent 52%),
+        linear-gradient(105deg, transparent 46%, #567c50 47% 49%, transparent 50%);
+}
+
+.wrapper {
+    position: absolute;
+    width: 180px;
+    height: 140px;
+    left: 50px;
+    bottom: 0;
+    z-index: 3;
+    background: linear-gradient(120deg, #d9b7e8, #a77bbd, #d8b6e7);
+    clip-path: polygon(10% 0, 90% 0, 75% 100%, 25% 100%);
+    border: 1px solid #eed7ff;
+}
+
+.ribbon {
+    position: absolute;
+    z-index: 4;
+    width: 55px;
+    height: 30px;
+    left: 112px;
+    bottom: 90px;
+    background: #75458f;
+    border-radius: 50%;
+    box-shadow: -20px 5px 0 -5px #8e5eaa, 20px 5px 0 -5px #8e5eaa;
+}
+
+/* Versos */
+
+.instruction {
+    color: #d8b9eb;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.verse-container {
+    min-height: 100px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.verse-container p {
+    font-family: 'Playfair Display', serif;
+    color: #f0d7ff;
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    line-height: 1.5;
+    animation: verseAppear 0.8s ease;
+}
+
+.counter {
+    color: #b99acb;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.replay-button {
+    margin-top: 25px;
+    background: transparent;
+    border: 1px solid #b58ad1;
+    color: #e5c4f5;
+}
+
+/* Pétalos que caen */
+
+.falling-petal {
+    position: fixed;
+    top: -30px;
+    z-index: 5;
+    width: 13px;
+    height: 19px;
+    border-radius: 80% 0 80% 0;
+    background: linear-gradient(135deg, #e6c2ff, #a96bd0);
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translate(var(--drift), 110vh) rotate(650deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes verseAppear {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .bouquet-area {
+        transform: scale(0.9);
+    }
+
+    .experience {
+        padding-top: 40px;
+    }
+}
+
+

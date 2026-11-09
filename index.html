@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un pequeño regalo para Daniela 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de bienvenida -->
+    <section id="welcome" class="welcome">
+        <div class="welcome-card">
+            <p class="small-text">Tengo algo para vos...</p>
+            <h1>Un pequeño detalle 💜</h1>
+            <p>Espero que te guste tanto como a mí prepararlo.</p>
+            <button id="open-button">Abrir mi regalo ✨</button>
+        </div>
+    </section>
+
+    <!-- Experiencia principal -->
+    <main id="experience" class="experience hidden">
+
+        <h1>Para vos, Daniela 💜</h1>
+        <p class="subtitle">Hay flores que dicen lo que las palabras no pueden.</p>
+
+        <div class="bouquet-area" id="bouquet">
+            <div class="bouquet">
+                <!-- Flores -->
+                <div class="flower flower-one">
+                    <span class="petals"></span>
+                    <span class="center"></span>
+                </div>
+
+                <div class="flower flower-two">
+                    <span class="petals"></span>
+                    <span class="center"></span>
+                </div>
+
+                <div class="flower flower-three">
+                    <span class="petals"></span>
+                    <span class="center"></span>
+                </div>
+
+                <div class="flower flower-four">
+                    <span class="petals"></span>
+                    <span class="center"></span>
+                </div>
+
+                <div class="flower flower-five">
+                    <span class="petals"></span>
+                    <span class="center"></span>
+                </div>
+
+                <!-- Tallos -->
+                <div class="stems"></div>
+
+                <!-- Envoltura -->
+                <div class="wrapper"></div>
+                <div class="ribbon"></div>
+            </div>
+        </div>
+
+        <p class="instruction">Tocá el ramo para descubrir algo... 🌸</p>
+
+        <div id="verse-container" class="verse-container">
+            <p id="verse">Cada flor guarda un pequeño mensaje para vos.</p>
+        </div>
+
+        <p id="counter" class="counter">0 / 10</p>
+
+        <button id="replay-button" class="replay-button">
+            Volver a escuchar la canción ♫
+        </button>
+
+    </main>
+
+   <audio id="bg-music" loop preload="auto">
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- Pétalos flotantes -->
+    <div id="petal-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
